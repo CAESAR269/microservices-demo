@@ -8,9 +8,6 @@ trigger:
 resources:
 - repo: self
 
-variables:
-  tag: '$(latest)'
-
 stages:
 - stage: Build
   displayName: Build image
@@ -26,4 +23,4 @@ stages:
         repository: 'caesar269 / adservice'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags: $tag
+        tags: latest
