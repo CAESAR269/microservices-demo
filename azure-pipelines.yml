@@ -24,3 +24,11 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: latest
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Docker'
+        repository: 'caesar269 / adservice'
+        command: 'buildAndPush'
+        Dockerfile: '$(Build.SourcesDirectory)/src/frontend/**/Dockerfile'
+        tags: latest
