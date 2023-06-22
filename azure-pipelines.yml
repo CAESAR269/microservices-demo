@@ -30,6 +30,6 @@ stages:
         containerRegistry: 'ACR'
         repository: 'tsar6'
         command: 'buildAndPush'
-        Dockerfile: '''$(Build.SourcesDirectory)/src/cartservice/src/**/Dockerfile'
+        Dockerfile: '''$(Build.SourcesDirectory)/src/cartservice/**/Dockerfile'
         tags: 'latest'
     
