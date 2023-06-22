@@ -19,16 +19,17 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'tsar6'
-        repository: 'caesar269 / adservice'
+        containerRegistry: 'ACR'
+        repository: 'tsar6'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
-        tags: latest
+        Dockerfile: '$(Build.SourcesDirectory)/src/adservice/**/Dockerfile'
+        tags: 'latest'
     
     - task: Docker@2
       inputs:
-        containerRegistry: 'tsar6'
-        repository: 'caesar269 / adservice'
+        containerRegistry: 'ACR'
+        repository: 'tsar6'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/src/frontend/**/Dockerfile'
-        tags: latest
+        Dockerfile: '''$(Build.SourcesDirectory)/src/cartservice/src/**/Dockerfile'
+        tags: 'latest'
+    
