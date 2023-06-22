@@ -22,7 +22,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'currencyservice'
         command: 'buildAndPush'
-        Dockerfile: '.src/currencyservice/**Dockerfile'
+        Dockerfile: './src/currencyservice/**Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -30,7 +30,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'emailservice'
         command: 'buildAndPush'
-        Dockerfile: '.src/emailservice/**Dockerfile'
+        Dockerfile: './src/emailservice/**Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -38,7 +38,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'frontend'
         command: 'buildAndPush'
-        Dockerfile: '.src/frontend/**/Dockerfile'
+        Dockerfile: './src/frontend/**/Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -46,7 +46,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'loadgenerator'
         command: 'buildAndPush'
-        Dockerfile: '.src/loadgenerator/**/Dockerfile'
+        Dockerfile: './src/loadgenerator/**/Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -54,7 +54,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'src/paymentservice'
         command: 'buildAndPush'
-        Dockerfile: '.src/paymentservice/**/Dockerfile'
+        Dockerfile: './src/paymentservice/**/Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -62,7 +62,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'productcatalogservice'
         command: 'buildAndPush'
-        Dockerfile: '.src/productcatalogservice/**/Dockerfile'
+        Dockerfile: './src/productcatalogservice/**/Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -70,7 +70,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'recommendationservice'
         command: 'buildAndPush'
-        Dockerfile: '.src/recommendationservice/**/Dockerfile'
+        Dockerfile: './src/recommendationservice/**/Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -78,5 +78,5 @@ stages:
         containerRegistry: 'ACR'
         repository: 'shippingservice'
         command: 'buildAndPush'
-        Dockerfile: '.src/shippingservice/**/Dockerfile'
+        Dockerfile: './src/shippingservice/**/Dockerfile'
         tags: 'latest'
