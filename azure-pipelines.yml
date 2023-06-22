@@ -20,25 +20,9 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'ACR'
-        repository: 'adservice'
-        command: 'buildAndPush'
-        Dockerfile: './src/adservice/**/Dockerfile'
-        tags: 'latest'
-    
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'ACR'
-        repository: 'cartservice'
-        command: 'buildAndPush'
-        Dockerfile: './src/cartservice/**/Dockerfile'
-        tags: 'latest'
-    
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'ACR'
         repository: 'currencyservice'
         command: 'buildAndPush'
-        Dockerfile: '.src/currencyservice/**/Dockerfile'
+        Dockerfile: '.src/currencyservice/**Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -46,7 +30,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'emailservice'
         command: 'buildAndPush'
-        Dockerfile: '.src/emailservice/**/Dockerfile'
+        Dockerfile: '.src/emailservice/**Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
