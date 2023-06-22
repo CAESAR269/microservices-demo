@@ -22,7 +22,7 @@ stages:
         containerRegistry: 'ACR'
         repository: 'adservice'
         command: 'buildAndPush'
-        Dockerfile: '/src/adservice/**/Dockerfile'
+        Dockerfile: './src/adservice/**/Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
@@ -30,6 +30,6 @@ stages:
         containerRegistry: 'ACR'
         repository: 'cartservice'
         command: 'buildAndPush'
-        Dockerfile: '/src/cartservice/**/Dockerfile'
+        Dockerfile: './src/cartservice/**/Dockerfile'
         tags: 'latest'
     
