@@ -20,16 +20,16 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'ACR'
-        repository: 'tsar6'
+        repository: 'adservice'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/src/adservice/**/Dockerfile'
+        Dockerfile: '/src/adservice/**/Dockerfile'
         tags: 'latest'
     
     - task: Docker@2
       inputs:
         containerRegistry: 'ACR'
-        repository: 'tsar6'
+        repository: 'cartservice'
         command: 'buildAndPush'
-        Dockerfile: '''$(Build.SourcesDirectory)/src/cartservice/**/Dockerfile'
+        Dockerfile: '/src/cartservice/**/Dockerfile'
         tags: 'latest'
     
