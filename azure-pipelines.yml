@@ -25,5 +25,5 @@ stages:
         containerRegistry: 'Docker'
         repository: 'caesar269 / adservice'
         command: 'buildAndPush'
-        Dockerfile: /home/vsts/src/adservice/Dockerfile
+        Dockerfile: '**/Dockerfile'
         tags: $tag
