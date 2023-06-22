@@ -1,0 +1,90 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- nimjay-always-if
+
+resources:
+- repo: self
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'adservice'
+        command: 'buildAndPush'
+        Dockerfile: './src/adservice**/Dockerfile'
+        tags: 'latest'
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'currencyservice'
+        command: 'buildAndPush'
+        Dockerfile: './src/currencyservice/**Dockerfile'
+        tags: 'latest'
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'emailservice'
+        command: 'buildAndPush'
+        Dockerfile: './src/emailservice/**Dockerfile'
+        tags: 'latest'
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'frontend'
+        command: 'buildAndPush'
+        Dockerfile: './src/frontend/**/Dockerfile'
+        tags: 'latest'
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'loadgenerator'
+        command: 'buildAndPush'
+        Dockerfile: './src/loadgenerator/**/Dockerfile'
+        tags: 'latest'
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'paymentservice'
+        command: 'buildAndPush'
+        Dockerfile: './src/paymentservice/**/Dockerfile'
+        tags: 'latest'
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'productcatalogservice'
+        command: 'buildAndPush'
+        Dockerfile: './src/productcatalogservice/**/Dockerfile'
+        tags: 'latest'
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'recommendationservice'
+        command: 'buildAndPush'
+        Dockerfile: './src/recommendationservice/**/Dockerfile'
+        tags: 'latest'
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'shippingservice'
+        command: 'buildAndPush'
+        Dockerfile: './src/shippingservice/**/Dockerfile'
+        tags: 'latest'
