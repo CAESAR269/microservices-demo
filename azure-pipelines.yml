@@ -20,6 +20,14 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'ACR'
+        repository: 'adservice'
+        command: 'buildAndPush'
+        Dockerfile: './src/adservice**/Dockerfile'
+        tags: 'latest'
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
         repository: 'currencyservice'
         command: 'buildAndPush'
         Dockerfile: './src/currencyservice/**Dockerfile'
@@ -52,7 +60,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'ACR'
-        repository: 'src/paymentservice'
+        repository: 'paymentservice'
         command: 'buildAndPush'
         Dockerfile: './src/paymentservice/**/Dockerfile'
         tags: 'latest'
