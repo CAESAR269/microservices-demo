@@ -19,7 +19,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker'
+        containerRegistry: 'tsar6'
         repository: 'caesar269 / adservice'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
@@ -27,7 +27,7 @@ stages:
     
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker'
+        containerRegistry: 'tsar6'
         repository: 'caesar269 / adservice'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/src/frontend/**/Dockerfile'
